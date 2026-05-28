@@ -1,0 +1,17 @@
+{
+  "name": "fan-passport",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:js": "node --check app.js && node --check scripts/deploy.mjs",
+    "compile": "node scripts/deploy.mjs --compile-only",
+    "deploy": "node scripts/deploy.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "solc": "^0.8.24"
+  }
+}

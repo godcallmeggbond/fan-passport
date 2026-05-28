@@ -1,0 +1,11 @@
+{
+  "project": "XCupFanPassport",
+  "address": "0xE68c85462e444A84d6Ce0842f4c79740680951e3",
+  "chainId": 196,
+  "rpcUrl": "https://rpc.xlayer.tech",
+  "explorer": "https://www.okx.com/web3/explorer/xlayer/address/0xE68c85462e444A84d6Ce0842f4c79740680951e3",
+  "transactionHash": "0xdf52d837528fbce25f6fbe4d76a398fbe70538676c46c57609ee07690edd788c",
+  "blockNumber": 61185400,
+  "gasUsed": "906411",
+  "deployedAt": "2026-05-28T07:47:15.755Z"
+}

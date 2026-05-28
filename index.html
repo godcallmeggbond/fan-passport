@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fan Passport</title>
+    <link rel="icon" href="./assets/fan-passport-avatar.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="paper-grain" aria-hidden="true"></div>
+    <div class="app-shell">
+      <header class="masthead">
+        <div class="stamp">Fan ID</div>
+        <div class="masthead-copy">
+          <p class="eyebrow">World Cup stamp booth</p>
+          <h1>Fan Passport</h1>
+          <p>Mint one wallet-bound supporter ID, choose a side, and collect match-day marks through the X Cup run.</p>
+        </div>
+        <div class="wallet-actions">
+          <span id="networkBadge" class="network-badge" aria-live="polite">X Layer ready</span>
+          <button id="settingsButton" class="plain-button" title="Project settings" type="button">Settings</button>
+          <button id="connectButton" class="primary-button" type="button">Connect wallet</button>
+        </div>
+      </header>
+
+      <main id="main" class="passport-layout">
+        <section class="passport-spread" aria-labelledby="passportTitle">
+          <div class="passport-page identity-page">
+            <div class="passport-topline">
+              <span>Fan ID Ledger</span>
+              <span>X Layer Mainnet</span>
+            </div>
+            <div class="portrait-window" aria-hidden="true">
+              <div class="portrait-ring"></div>
+              <div class="portrait-ball"></div>
+            </div>
+            <div class="passport-content">
+              <p class="eyebrow">Identity page</p>
+              <h2 id="passportTitle">Wallet Supporter File</h2>
+              <p id="passportOwner" class="muted" aria-live="polite">Connect a wallet to issue a fan ID.</p>
+              <div id="selectedTeam" class="selected-team">No side stamped yet</div>
+            </div>
+          </div>
+
+          <div class="passport-page data-page">
+            <div class="passport-stats">
+              <div><strong id="levelValue">0</strong><span>Level</span></div>
+              <div><strong id="xpValue">0</strong><span>XP</span></div>
+              <div><strong id="badgeValue">0</strong><span>Badges</span></div>
+            </div>
+            <div class="passport-actions">
+              <button id="mintButton" class="full-button" type="button">Issue Fan ID</button>
+              <button id="checkInButton" class="full-button secondary" type="button">Add match-day mark</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel team-panel" aria-labelledby="teamTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Side registry</p>
+              <h2 id="teamTitle">Choose the shirt</h2>
+            </div>
+            <button id="switchNetworkButton" class="plain-button" type="button">Switch to X Layer</button>
+          </div>
+          <div id="teamGrid" class="team-grid"></div>
+        </section>
+
+        <section class="panel quests-panel" aria-labelledby="questsTitle">
+          <p class="eyebrow">Fan errands</p>
+          <h2 id="questsTitle">Add marks to the ID</h2>
+          <div id="questList" class="quest-list"></div>
+        </section>
+
+        <aside class="side-stack">
+          <section class="panel" aria-labelledby="badgesTitle">
+            <p class="eyebrow">Badge sleeve</p>
+            <h2 id="badgesTitle">Collected proof</h2>
+            <div id="badgeShelf" class="badge-shelf"></div>
+          </section>
+
+          <section class="panel" aria-labelledby="leaderboardTitle">
+            <p class="eyebrow">Fan wall</p>
+            <h2 id="leaderboardTitle">Active holders</h2>
+            <ol id="leaderboard" class="leaderboard"></ol>
+          </section>
+
+          <section class="panel" aria-labelledby="activityTitle">
+            <p class="eyebrow">Booth log</p>
+            <h2 id="activityTitle">Recent activity</h2>
+            <div id="activityLog" class="activity-log" aria-live="polite"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <dialog id="settingsDialog" class="settings-dialog">
+      <form method="dialog" class="settings-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Deployment</p>
+            <h2>Contract settings</h2>
+          </div>
+          <button class="icon-only" value="cancel" type="submit" title="Close" aria-label="Close settings">x</button>
+        </div>
+        <label class="field-label" for="contractAddressInput">XCupFanPassport contract address</label>
+        <input id="contractAddressInput" class="text-input" name="contractAddress" placeholder="0x…" autocomplete="off" spellcheck="false" />
+        <p class="muted small">Leave empty for local preview mode. The deployed site loads the X Layer address from deployment.json.</p>
+        <div class="dialog-actions">
+          <button id="clearSettingsButton" class="plain-button" value="cancel" type="button">Clear</button>
+          <button id="saveSettingsButton" class="primary-button" value="default" type="button">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
